@@ -21,6 +21,8 @@ public class SQL {
         this.databaseName = databaseName;
         this.port = port;
     }
+
+
     //构造
     public SQL(String username, String password, String ipAddress, String databaseName, String port) {
         this.username = username;
