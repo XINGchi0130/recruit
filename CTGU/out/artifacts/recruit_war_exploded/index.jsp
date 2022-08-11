@@ -9,10 +9,8 @@
 <html>
   <head>
     <title>秋季招新</title>
-    <link rel="stylesheet" href="main/index/index.css">
   </head>
   <body>
-  <%@include file="main/index/index.html"%>
-  <script src="main/index/index.js"></script>
+  <%@include file="main/index/index.jsp"%>
   </body>
 </html>
