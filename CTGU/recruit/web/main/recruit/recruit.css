@@ -1,7 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*取消input中type="number"时右侧的上下箭头*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 input[type="number"]{
     -moz-appearance: textfield;
+}
+
+/* 下面是背景渐变色 */
+body {
+    background-image: linear-gradient(
+            125deg,
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            cyan,
+            purple
+    );
+    background-size: 700%;
+    animation: backgroundChange 14s linear infinite;
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 45px;
+    background: linear-gradient(145deg, pink, white);
+    box-shadow: 3px 3px 7px #898989, -3px -3px 40px #ffffff;
+}
+
+input {
+    text-indent: 9px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(242, 235, 33, 0.6);
+    background-color: transparent
+}
+
+select {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(242, 235, 33, 0.6);
+    background-color: transparent;
+}
+
+option {
+    background-color: transparent;
 }
