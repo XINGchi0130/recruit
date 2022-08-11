@@ -40,29 +40,94 @@ body {
     }
 }
 
+/*标题*/
+.title{
+    margin-top: 50px;
+}
+
+/*表单主体*/
 .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 45px;
+    max-width: 750px;
+    min-width: 500px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-radius: 15px;
     background: linear-gradient(145deg, pink, white);
     box-shadow: 3px 3px 7px #898989, -3px -3px 40px #ffffff;
 }
 
+/*输入框*/
 input {
     text-indent: 9px;
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(242, 235, 33, 0.6);
-    background-color: transparent
+    border-bottom: 1px solid rgba(58, 150, 221, 0.6);
+    background-color: transparent;
 }
 
+/*select*/
+.IntentionFirst,
+.IntentionSecond,
+.College,
+.Sex {
+    height: 25px;
+}
+
+/*文本域*/
+textarea {
+    resize: none;
+}
+
+.TextareaBox{
+    margin: 0 47px;
+}
+
+/*下拉*/
 select {
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(242, 235, 33, 0.6);
+    border-bottom: 1px solid rgba(58, 150, 221, 0.6);
     background-color: transparent;
 }
 
-option {
-    background-color: transparent;
+/*每一行*/
+.row1,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6,
+.row7 {
+    margin: 12px;
+}
+
+.row1 {
+    margin-top: 50px;
+}
+
+.row7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/*输入框小盒子*/
+.Box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+/*性别*/
+.Sex {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+
+/*提交按钮*/
+button {
+    width: 100px;
 }

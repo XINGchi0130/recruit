@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<h1>哈哈哈</h1>
 <div>
-    <a href="main/recruit/recruit.jsp">this is recruit</a>
+    <a href="main/recruit/recruit.jsp">点我报名</a>
 </div>
 <div>
     <a href="main/game/game.jsp">this is a game</a>
