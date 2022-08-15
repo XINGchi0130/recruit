@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <title>秋季招新</title>
@@ -14,19 +18,18 @@
 </div>
 
 
-
 <%--表单--%>
 <div class="container">
 
     <%--  学号、姓名  --%>
-    <div class="row row1">
-        <div class="col-md-6 Box">
+    <div class="row1">
+        <div class="Box">
             <div>
                 <label for="ID" class="form-label">学号</label>
                 <input type="number" id="ID" placeholder="请输入学号">
             </div>
         </div>
-        <div class="col-md-6 Box">
+        <div class="Box">
             <div>
                 <label for="Name" class="form-label">姓名</label>
                 <input type="text" id="Name" placeholder="请输入姓名">
@@ -35,55 +38,55 @@
     </div>
 
     <%--  性别、第一志愿  --%>
-    <div class="row row2">
-        <div class="col-md-6 Box">
+    <div class="row2">
+        <div class="Box">
             <div class="Sex">
-                <strong>&nbsp;性别</strong>
+                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别</strong>
                 <span class="form-check">
-                <input type="radio" name="Sex" id="Male" checked>
+                <input type="radio" name="Sex" id="Male" value="男性" checked style="zoom:1.2;">
                 <label class="form-check-label" for="Male">
                     &nbsp;&nbsp;男
                 </label>
             </span>
                 <span class="form-check">
-                <input type="radio" name="Sex" id="Female">
+                <input type="radio" name="Sex" id="Female" value="女性" style="zoom:1.2;">
                 <label class="form-check-label" for="Female">
                     &nbsp;&nbsp;女
                 </label>
             </span>
             </div>
         </div>
-        <div class="col-md-6 Box">
+        <div class="Box">
             <div>
-                <strong>第一志愿&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                <strong>第一志愿&nbsp;&nbsp;&nbsp;&nbsp;</strong>
                 <select class="IntentionFirst">
                     <option value="启明星开发组" selected>启明星开发组</option>
                     <option value="启明星智能组">启明星智能组</option>
                     <option value="启明星机械组">启明星机械组</option>
                     <option value="ACM集训队">ACM集训队</option>
                 </select>
-                <strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
             </div>
         </div>
     </div>
 
     <%--  第二志愿、学院  --%>
-    <div class="row row3">
-        <div class="col-md-6 Box">
+    <div class="row3">
+        <div class="Box">
             <div>
-                <strong>第二志愿&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                <strong>第二志愿&nbsp;&nbsp;&nbsp;&nbsp;</strong>
                 <select class="IntentionSecond">
                     <option value="启明星开发组" selected>启明星开发组</option>
                     <option value="启明星智能组">启明星智能组</option>
                     <option value="启明星机械组">启明星机械组</option>
                     <option value="ACM集训队">ACM集训队</option>
                 </select>
-                <strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
             </div>
         </div>
-        <div class="col-md-6 Box">
+        <div class="Box">
             <div>
-                <strong>学院&nbsp;&nbsp;&nbsp;</strong>
+                <strong>学院&nbsp;&nbsp;&nbsp;&nbsp;</strong>
                 <select class="College">
                     <option value="计算机与信息学院" selected>计算机与信息学院</option>
                     <option value="电气与新能源学院">电气与新能源学院</option>
@@ -104,26 +107,27 @@
     </div>
 
     <%--  专业、电话号码  --%>
-    <div class="row row4">
-        <div class="col-md-6 Box">
+    <div class="row4">
+        <div class="Box">
             <div>
                 <label for="Major" class="form-label">专业</label>
                 <input type="text" id="Major" placeholder="请输入专业">
             </div>
         </div>
-        <div class="col-md-6 Box">
+        <div class="Box">
             <div>
                 <label for="PhoneNumber" class="form-label">&nbsp;&nbsp;&nbsp;&emsp;&nbsp;电话号码</label>
                 <input type="number" id="PhoneNumber" placeholder="请输入电话号码">
             </div>
+            <strong>&nbsp;</strong>
         </div>
     </div>
 
     <%--  QQ号  --%>
-    <div class="row row5">
-        <div class="col-md-12 Box">
+    <div class="row5">
+        <div class="Box">
             <div>
-                <label for="QQNumber" class="form-label">&nbsp;&nbsp;QQ号</label>
+                <label for="QQNumber" class="form-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ号</label>
                 <input type="number" id="QQNumber" placeholder="请输入QQ号">
             </div>
         </div>
@@ -132,22 +136,21 @@
     <%--  自我介绍  --%>
     <div class="row6">
         <div class="TextareaBox">
-            <label for="Introduction" class="form-label">自我介绍</label>
+            <div align="center"><label for="Introduction" class="form-label">自我介绍</label></div>
             <textarea class="form-control" rows="2" id="Introduction" placeholder="请介绍自己"></textarea>
         </div>
     </div>
 
     <%--  提交  --%>
     <div class="row row7">
-        <button type="submit" class="btn btn-primary">提交</button>
+        <button class="Button" id="Button" type="submit">提交</button>
     </div>
 </div>
 
 
+<script src="../../assets/jquery.js" type="text/javascript"></script>
 
 <script src="recruit.js" type="text/javascript"></script>
-
-<script src="assets/jquery.js"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"

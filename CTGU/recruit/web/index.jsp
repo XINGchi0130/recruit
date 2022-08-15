@@ -9,8 +9,9 @@
 <html>
   <head>
     <title>秋季招新</title>
+    <link rel="shortcut icon" href="#" />
   </head>
   <body>
-  <%@include file="main/index/index.jsp"%>
+  <%@include file="main/index/main.jsp"%>
   </body>
 </html>

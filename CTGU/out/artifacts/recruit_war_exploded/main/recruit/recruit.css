@@ -1,6 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
+}
+
+div {
+    white-space: nowrap;
 }
 
 /*取消input中type="number"时右侧的上下箭头*/
@@ -8,7 +12,8 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-input[type="number"]{
+
+input[type="number"] {
     -moz-appearance: textfield;
 }
 
@@ -41,14 +46,14 @@ body {
 }
 
 /*标题*/
-.title{
+.title {
     margin-top: 50px;
 }
 
 /*表单主体*/
 .container {
-    max-width: 750px;
-    min-width: 500px;
+    width: 700px;
+    height: 400px;
     margin-top: 25px;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -78,8 +83,8 @@ textarea {
     resize: none;
 }
 
-.TextareaBox{
-    margin: 0 47px;
+.TextareaBox {
+    margin: 0 58px;
 }
 
 /*下拉*/
@@ -94,10 +99,17 @@ select {
 .row1,
 .row2,
 .row3,
-.row4,
+.row4 {
+    display: flex;
+    justify-content: space-around;
+    width: 650px;
+    margin: 12px;
+}
+
 .row5,
 .row6,
 .row7 {
+    width: 650px;
     margin: 12px;
 }
 
@@ -118,6 +130,7 @@ select {
     justify-content: center;
     align-items: center;
     width: 300px;
+    height: 25px;
 }
 
 /*性别*/
@@ -129,5 +142,11 @@ select {
 
 /*提交按钮*/
 button {
-    width: 100px;
+    border: none;
+    color: azure;
+    height: 35px;
+    width: 140px;
+    border-radius: 33px;
+    background: #3b89e3;
+    box-shadow: inset -17px 17px 34px #3b89e3, inset 17px -17px 34px #346a94;
 }
