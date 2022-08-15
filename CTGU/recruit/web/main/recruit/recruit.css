@@ -150,3 +150,16 @@ button {
     background: #3b89e3;
     box-shadow: inset -17px 17px 34px #3b89e3, inset 17px -17px 34px #346a94;
 }
+
+/*提示框*/
+#NoticeWarning,
+#NoticeSuccess,
+#NoticeDanger {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+    height: 40px;
+    text-align:center;
+}

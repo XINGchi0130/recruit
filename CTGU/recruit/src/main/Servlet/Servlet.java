@@ -1,6 +1,5 @@
 package main.Servlet;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,24 +8,9 @@ import java.io.IOException;
 
 
 @WebServlet("/Servlet")
-public class Submit extends HttpServlet {
-    public Submit() {
-        super();
-    }
-
-//    "ID":ID,
-//            "Name":Name,
-//            "Sex":Sex,
-//            "IntentionFirst":IntentionFirst,
-//            "IntentionSecond":IntentionSecond,
-//            "College":College,
-//            "Major":Major,
-//            "PhoneNumber":PhoneNumber,
-//            "QQNumber":QQNumber,
-//            "Introduction":Introduction
-
+public class Servlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html; charset=UTF-8");
         String ID = req.getParameter("ID");
@@ -39,5 +23,6 @@ public class Submit extends HttpServlet {
         String PhoneNumber = req.getParameter("PhoneNumber");
         String QQNumber = req.getParameter("QQNumber");
         String Introduction = req.getParameter("Introduction");
+        System.out.println("ID:" + ID);
     }
 }

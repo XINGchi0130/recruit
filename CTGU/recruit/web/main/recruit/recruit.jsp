@@ -142,7 +142,7 @@
     </div>
 
     <%--  提交  --%>
-    <div class="row row7">
+    <div class="row7">
         <button class="Button" id="Button" type="submit">提交</button>
     </div>
 </div>
