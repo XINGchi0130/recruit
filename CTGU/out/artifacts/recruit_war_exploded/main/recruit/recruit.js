@@ -25,17 +25,17 @@ $(document).ready(function () {
             //       ";电话号码:" + PhoneNumber +
             //       ";QQ号:" + QQNumber +
             //       ";自我介绍:" + Introduction)
-            // if (ID == "") {
-            //     $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入学号!!!</div>")
-            // } else if (Name == "") {
-            //     $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入姓名!!!</div>")
-            // } else if (Major == "") {
-            //     $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入专业!!!</div>")
-            // } else if (QQNumber == "") {
-            //     $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入QQ号!!!</div>")
-            // } else if (Introduction == "") {
-            //     $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入自我介绍!!!</div>")
-            // } else {
+            if (ID == "") {
+                $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入学号!!!</div>")
+            } else if (Name == "") {
+                $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入姓名!!!</div>")
+            } else if (Major == "") {
+                $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入专业!!!</div>")
+            } else if (QQNumber == "") {
+                $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入QQ号!!!</div>")
+            } else if (Introduction == "") {
+                $('body').append("<div id='NoticeWarning' class=\"alert alert-warning\" role=\"alert\" data-dismiss=\"alert\">请输入自我介绍!!!</div>")
+            } else {
                 $.ajax({
                     url: "Servlet",
                     type: "POST",
@@ -60,7 +60,7 @@ $(document).ready(function () {
                         $('body').append("<div id='NoticeDanger' class=\"alert alert-danger\" role=\"alert\" data-dismiss=\"alert\">上传或更新信息失败！！！</div>")
                     },
                 })
-            // }
+            }
         });
     }
 );
