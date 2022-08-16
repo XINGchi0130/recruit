@@ -1,7 +1,7 @@
-package main.Person;
+package main.Entity;
 
 public class Student {
-    private int ID;
+    private String ID;
     private String Name;
     private String Sex;
     private String IntentionFirst;
@@ -13,7 +13,7 @@ public class Student {
     private String Introduction;
 
 
-    public Student(int ID, String name, String sex, String intentionFirst, String intentionSecond, String college, String major, String phoneNumber, String QQNumber, String introduction) {
+    public Student(String ID, String name, String sex, String intentionFirst, String intentionSecond, String college, String major, String phoneNumber, String QQNumber, String introduction) {
         this.ID = ID;
         Name = name;
         Sex = sex;
@@ -27,7 +27,7 @@ public class Student {
     }
 
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
@@ -65,5 +65,10 @@ public class Student {
 
     public String getIntroduction() {
         return Introduction;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

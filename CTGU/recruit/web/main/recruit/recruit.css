@@ -156,7 +156,7 @@ button {
 #NoticeSuccess,
 #NoticeDanger {
     position: absolute;
-    top: 18%;
+    top: 115px;
     left: 50%;
     margin-left: -250px;
     width: 500px;

@@ -137,7 +137,7 @@
     <div class="row6">
         <div class="TextareaBox">
             <div align="center"><label for="Introduction" class="form-label">自我介绍</label></div>
-            <textarea class="form-control" rows="2" id="Introduction" placeholder="请介绍自己"></textarea>
+            <textarea class="form-control" rows="3" id="Introduction" placeholder="请介绍自己"></textarea>
         </div>
     </div>
 
