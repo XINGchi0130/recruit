@@ -19,18 +19,9 @@ input[type="number"] {
 
 /* 下面是背景渐变色 */
 body {
-    background-image: linear-gradient(
-            125deg,
-            red,
-            orange,
-            yellow,
-            green,
-            blue,
-            cyan,
-            purple
-    );
+    background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
     background-size: 700%;
-    animation: backgroundChange 14s linear infinite;
+    animation: backgroundChange 10s linear infinite;
 }
 
 @keyframes backgroundChange {
@@ -47,7 +38,7 @@ body {
 
 /*标题*/
 .title {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 /*表单主体*/
@@ -57,8 +48,8 @@ body {
     margin-top: 25px;
     margin-bottom: 10px;
     border-radius: 15px;
-    background: linear-gradient(145deg, pink, white);
-    box-shadow: 3px 3px 7px #898989, -3px -3px 40px #ffffff;
+    background: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 100%);
+    box-shadow: 3px 3px 7px #898989;
 }
 
 /*输入框*/
