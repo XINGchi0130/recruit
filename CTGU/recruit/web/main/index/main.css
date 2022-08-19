@@ -3,7 +3,169 @@
     padding: 0;
 }
 
+body {
+    background-image: url("../../assets/index/cool-background.png");
+    background-size: 100% 100%;
+}
+
 .title {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
+}
+
+.container {
+    margin-top: 10px;
+    font-size: 16px;
+    gap: 20px;
+    border-radius: 27px;
+    backdrop-filter: blur(9px);
+    background-color: rgba(244,245,246, 0.075);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+    border: 0px rgba(255,255,255,0.4) solid;
+    border-bottom: 0px rgba(40,40,40,0.35) solid;
+    border-right: 0px rgba(40,40,40,0.35) solid;
+}
+
+.main {
+    margin: 15px 20px;
+}
+
+p {
+    text-indent: 2em;
+}
+
+/*按钮*/
+.recruit {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 180px;
+    height: 50px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 60px;
+}
+
+.btn:hover {
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+
+/*风车*/
+.game {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#effect-windmill {
+    position: relative;
+    width: 30px;
+    height: 45px;
+}
+
+#effect-windmill > .blade-container {
+    position: absolute;
+    display: flex;
+    flex-flow: column wrap;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    z-index: 20;
+    animation: wind 10s linear 3s infinite;
+    -webkit-animation: wind 10s linear 3s infinite;
+}
+
+#effect-windmill > .blade-container > .blade-item {
+    width: 0;
+    height: 0;
+}
+
+#effect-windmill > .blade-container > .blade-item:nth-child(1) {
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #e74c3c;
+}
+
+#effect-windmill > .blade-container > .blade-item:nth-child(2) {
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #e67e22;
+}
+
+#effect-windmill > .blade-container > .blade-item:nth-child(3) {
+    border-right: 15px solid transparent;
+    border-top: 15px solid #f1c40f;
+}
+
+#effect-windmill > .blade-container > .blade-item:nth-child(4) {
+    border-left: 15px solid transparent;
+    border-top: 15px solid #2ecc71;
+}
+
+#effect-windmill > .pole {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    height: 30px;
+    background-color: #3498db;
+    z-index: 10;
+}
+
+@keyframes wind {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-3600deg);
+        -webkit-transform: rotate(-3600deg);
+        -moz-transform: rotate(-3600deg);
+        -ms-transform: rotate(-3600deg);
+        -o-transform: rotate(-3600deg);
+    }
 }
