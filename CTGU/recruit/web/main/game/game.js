@@ -1,6 +1,6 @@
 // $(document).ready(function () {
 var jumpm = document.getElementById('jumpm');//"跳跃音效"
-var jumpm0 = document.getElementById('jumpm0');
+var jntm = document.getElementById('jntm');
 var squatsm = document.getElementById('squatsm');
 var ccyd = document.getElementById('ccyd');
 var dyc = document.getElementById('dyc');
@@ -21,18 +21,17 @@ var count = true;//count为true时可以摁按键
 
 window.addEventListener('keydown', event => {//element.addEventListener(event, function, useCapture) 当事件(event)发生时,就会执行function(); event => 相当于 function(event) {...}
     console.log(event);
-    if (event.code === 'Space' && count === true) {//event.code == '键位' 用于判断摁下'键位
+    if ((event.code === 'Space' || event.code == 'ArrowUp') && count === true) {//event.code == '键位' 用于判断摁下'键位
         count = false;
         start = true;
-        if (judge0 === false) {
+        if (judge0 == false) {
             jumpm.play();
-        } else {
-            jumpm0.play();
+        } else if (judge0 == true && sorce <= 300) {
+            jntm.play();
         }
         const blockLeft = parseFloat(
             getComputedStyle(block).getPropertyValue('left')//getComputedStyle()方法用于获取指定元素的 CSS 样式,getPropertyValue()方法用于返回指定css的属性值
         );
-        console.log("为" + blockLeft);
         dino.classList.add('jumpClass');//classList 属性返回元素的类名 可以用add(),remove()方法来给其增加和移除类
         document.getElementById("dino").style.backgroundImage = "url('../../assets/game/png/jump.png')";
         setTimeout(() => {//setTimeout(function()，毫秒) 时间到了, 就会执行function()
@@ -73,7 +72,7 @@ window.addEventListener('keydown', event => {//element.addEventListener(event, f
             document.getElementById("dino").style.backgroundImage = "url('../../assets/game/gif/rotating.gif')";
             count = false;
             skill -= 1;
-            document.getElementById("skillnum").innerHTML = "可用技能次数:" + skill;
+            document.getElementById("skillnum").innerHTML = "可用技能点数:" + skill;
             setTimeout(() => {//setTimeout(function()，毫秒) 时间到了, 就会执行function()
                 document.getElementById("dino").style.backgroundImage = "url('../../assets/game/gif/dribble.gif')";
             }, 1000);
@@ -91,10 +90,12 @@ window.addEventListener('keydown', event => {//element.addEventListener(event, f
         count = false;
         setTimeout(() => {//setTimeout(function()，毫秒) 时间到了, 就会执行function()
             document.getElementById("dino").style.backgroundImage = "url('../../assets/game/gif/tsk.gif')";
-        }, 500);
+            bgmnum += 1;
+        }, 300);
         setTimeout(() => {
             count = true;
-        }, 530)
+            open = false;
+        }, 330)
     }
 });
 
@@ -122,9 +123,9 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
     const blueblockLeft = parseFloat(
         getComputedStyle(blueblock).getPropertyValue('left')
     );
-    if ((blockLeft < 280 && blockLeft > 200 && dinoBottom <= 200) || (airblockLeft < 280 && airblockLeft > 200 && (dinoheight <= 200 || dinoBottom <= 200))) {//判断dino是否遇到两种block
+    if ((blockLeft < 280 && blockLeft > 200 && dinoBottom <= 200) || (airblockLeft < 280 && airblockLeft > 200 && !(dinoheight < 200 || dinoBottom >= 200))) {//判断dino是否遇到两种block
         if (invincibility == false) {//不是无敌状态下
-            over.play();
+            //over.play();
             console.log('游戏结束');//控制台输出游戏结束
             //window.location.reload(); //游戏结束刷新页面
             //alert('游戏结束,  点击确定后按空格重新开始');//结束后出现提示框
@@ -135,14 +136,14 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
         ybmusic.play();
         if (sorce <= 50) {
             sorce += 5;
-        } else if (sorce <= 200) {
-            sorce += 20;
+        } else if (sorce <= 300) {
+            sorce += 10;
         } else {
-            sorce += 50;
+            sorce += 30;
         }
         setTimeout(() => {
             available = true;
-        }, 200)
+        }, 250)
     }
     if (blueblockLeft < 208 && blueblockLeft > 200 && dinoBottom > 200 && available == true) {
         available = false;
@@ -151,20 +152,21 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
         document.getElementById("skillnum").innerHTML = "可用技能次数:" + skill;
         setTimeout(() => {
             available = true;
-        }, 200)
+        }, 250)
     }
 });
 
-//游戏的分数系统
 var sorce = 0;
 
 function addsorce() {
-    if (sorce <= 50) {
+    if (sorce <= 30) {
         sorce += 1;
-    } else if (sorce <= 200) {
+    } else if (sorce <= 80) {
         sorce += 2;
-    } else {
+    } else if (sorce <= 300) {
         sorce += 3;
+    } else {
+        sorce += 5;
     }
     document.getElementById("sorce").innerHTML = "分数:" + sorce;
 }
@@ -180,7 +182,6 @@ var judge0 = false;//和跳跃音效切换有关
 
 function check() {
     if (sorce >= 200 && judge == false) {
-        console.log('分数10');
         dyc.play();
         judge = true;
         setTimeout(() => {
@@ -194,39 +195,39 @@ if (judge == false) {
 }
 
 //如何让障碍物随机生成并且不会引起死局的情况
-//大致思路,将动画封装在一个类中,然后通过方法调用该类,然后没调用时隐藏,调用时显示
+//大致思路,将动画封装在一个类中,然后通过方法调用该类,然后没调用时隐藏,调用时显
 
 
 function addblock() {
     //move1
     if (1) {
-        if (sorce <= 20) {//进入第一阶段
+        if (sorce <= 30) {//进入第一阶段
             block.classList.add('move1Class');
             setTimeout(() => {
                 block.classList.remove('move1Class');
                 document.getElementById("block").style.display = "none";
             }, 1000);
-        } else if (sorce <= 50) {//进入第二阶段
+        } else if (sorce <= 80) {//进入第二阶段
             block.classList.remove('move1Class');
             block.classList.add('move1fast1Class');
             setTimeout(() => {
                 block.classList.remove('move1Class');
                 document.getElementById("block").style.display = "none";
-            }, 800);
-        } else if (sorce <= 200) {
+            }, 850);
+        } else if (sorce <= 300) {
             block.classList.remove('move1fast1Class');
             block.classList.add('move1fast2Class');
             setTimeout(() => {
                 block.classList.remove('move1Class');
                 document.getElementById("block").style.display = "none";
-            }, 600);
+            }, 650);
         } else {
             block.classList.remove('move1fast2Class');
             block.classList.add('move1fast3Class');
             setTimeout(() => {
                 block.classList.remove('move1Class');
                 document.getElementById("block").style.display = "none";
-            }, 500);
+            }, 550);
         }
         document.getElementById("block").style.display = "block";
 
@@ -237,33 +238,33 @@ function addblock() {
 function addairblock() {
     //move2
     if (1) {
-        if (sorce <= 20) {//进入第一阶段
+        if (sorce <= 30) {//进入第一阶段
             airblock.classList.add('move2Class');
             setTimeout(() => {
                 airblock.classList.remove('move2Class');
                 document.getElementById("airblock").style.display = "none";
             }, 1000);
-        } else if (sorce <= 50) {//进入第二阶段
+        } else if (sorce <= 80) {//进入第二阶段
             airblock.classList.remove('move2Class');
             airblock.classList.add('move2fast1Class');
             setTimeout(() => {
                 airblock.classList.remove('move2Class');
                 document.getElementById("airblock").style.display = "none";
-            }, 800);
-        } else if (sorce <= 200) {
+            }, 850);
+        } else if (sorce <= 300) {
             airblock.classList.remove('move2fast1Class');
             airblock.classList.add('move2fast2Class');
             setTimeout(() => {
                 airblock.classList.remove('move2Class');
                 document.getElementById("airblock").style.display = "none";
-            }, 600);
+            }, 650);
         } else {
             airblock.classList.remove('move2fast2Class');
             airblock.classList.add('move2fast3Class');
             setTimeout(() => {
                 airblock.classList.remove('move2Class');
                 document.getElementById("airblock").style.display = "none";
-            }, 500);
+            }, 550);
         }
         document.getElementById("airblock").style.display = "block";
 
@@ -310,9 +311,8 @@ if (sorce <= 50) {//进入第二阶段
 var start = false;//游戏未开始时不生成
 
 function produceblock() {
-    var num;//num为生成的随机
+    var num;//num为生成的随机数
     num = Math.floor(Math.random() * (100 - 1 + 1)) + 1;//1到100之间的随机数
-    console.log("num为" + num);
 
     if (num % n1 == 0) {
         setTimeout(addblock(), 100);
@@ -332,4 +332,106 @@ setInterval(() => {
     }
 }, 1000);//生成时间的间隔
 
-// });
+//背景音乐的切换
+var bgmnum = 1;
+var cyclenum = 0;
+var open = false;
+
+musiccontrol = document.querySelector('.musiccontrol')    //对应audio标签
+musicsource = document.querySelector('.musicsource')    //对应source标签
+
+setInterval(() => {
+    if (sorce < 200) {
+        if (bgmnum == 0) {
+            if (cyclenum > 0) {
+                musiccontrol.pause();
+            }
+        }
+        if (bgmnum == 1 && open == false) {
+            if (cyclenum > 0) {
+                musicsource.src = "../../assets/game/mp3/maria.mp3";
+                musiccontrol.load();
+            }
+            musiccontrol.play();
+            open = true;
+        }
+        if (bgmnum == 2 && open == false) {
+            musiccontrol.pause();
+            musicsource.src = "../../assets/game/mp3/troubleMaker.mp3";
+            musiccontrol.load();
+            musiccontrol.play();
+            open = true;
+        }
+        if (bgmnum == 3) {
+            bgmnum = 0;
+            open = false;
+            cyclenum++;
+        }
+    } else if (sorce >= 200 && sorce <= 300) {
+        if (open == true) {
+            musiccontrol.pause();
+            open = false;
+        }
+        cyclenum = 0;
+        bgmnum = 1;
+    } else if (sorce <= 900 && sorce > 300) {
+        if (bgmnum == 0) {
+            if (cyclenum > 0) {
+                musiccontrol.pause();
+            }
+        }
+        if (bgmnum == 1 && open == false) {
+            if (cyclenum >= 0) {
+                musicsource.src = "../../assets/game/mp3/Fire.mp3";
+                musiccontrol.load();
+            }
+            musiccontrol.play();
+            open = true;
+        }
+        if (bgmnum == 2 && open == false) {
+            musiccontrol.pause();
+            musicsource.src = "../../assets/game/mp3/Front.mp3";
+            musiccontrol.load();
+            musiccontrol.play();
+            open = true;
+        }
+        if (bgmnum == 3) {
+            bgmnum = 0;
+            open = false;
+            cyclenum++;
+        }
+    } else if (sorce > 900 && sorce <= 950) {
+        if (open == true) {
+            musiccontrol.pause();
+            open = false;
+        }
+        cyclenum = 0;
+        bgmnum = 1;
+    } else {
+        if (bgmnum == 0) {
+            if (cyclenum > 0) {
+                musiccontrol.pause();
+            }
+        }
+        if (bgmnum == 1 && open == false) {
+            if (cyclenum >= 0) {
+                musicsource.src = "../../assets/game/mp3/sliverSrapes.mp3";
+                musiccontrol.load();
+            }
+            musiccontrol.play();
+            open = true;
+        }
+        if (bgmnum == 2 && open == false) {
+            musiccontrol.pause();
+            musicsource.src = "../../assets/game/mp3/Final.mp3";
+            musiccontrol.load();
+            musiccontrol.play();
+            open = true;
+        }
+        if (bgmnum == 3) {
+            bgmnum = 0;
+            open = false;
+            cyclenum++;
+        }
+    }
+}, 300)
