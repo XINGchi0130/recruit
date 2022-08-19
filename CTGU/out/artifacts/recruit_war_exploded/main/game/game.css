@@ -1,6 +1,7 @@
 body {
     padding: 8vh;
     background-image: url("../../assets/game/jpg/dawn.jpg");
+    user-select: none;
 }
 
 a{
