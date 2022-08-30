@@ -125,10 +125,12 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
     );
     if ((blockLeft < 280 && blockLeft > 200 && dinoBottom <= 200) || (airblockLeft < 280 && airblockLeft > 200 && !(dinoheight < 200 || dinoBottom >= 200))) {//判断dino是否遇到两种block
         if (invincibility == false) {//不是无敌状态下
-            over.play();
             console.log('游戏结束');//控制台输出游戏结束
             window.location.reload(); //游戏结束刷新页面
             alert('游戏结束,  点击确定后按空格重新开始');//结束后出现提示框
+            setTimeout(() => {
+                over.play();
+            },50)
         }
     }
     if (yellowblockLeft < 208 && yellowblockLeft > 200 && dinoBottom > 208) {

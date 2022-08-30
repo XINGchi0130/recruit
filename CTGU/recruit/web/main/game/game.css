@@ -1,7 +1,7 @@
 body {
     padding: 8vh;
-    background-image: url("../../assets/game/jpg/dawn.jpg");
     user-select: none;
+    background-color: #9b9ad0;
 }
 
 a{
@@ -19,8 +19,6 @@ a:hover{
     align-items: center;
     justify-content: space-around;
     background: white;
-    height: 5%;
-    width: 10%;
     top: 110%;
     left: 5%;
     Font-size:22px;
@@ -259,19 +257,17 @@ a:hover{
 }
 
 #sorce {
-    position: absolute;
-    top: 20%;
-    left: 30%;
     text-align: center;
+    line-height: 50px;
     color: gold;
 }
 
 #sorcebg {
     position: absolute;
-    width: 12%;
-    height: 8%;
+    width: 200px;
+    height: 50px;
     top: 0;
-    right: 0;
+    right: 205px;
     background-image: url("../../assets/game/png/displayBox.png");
     background-size: 100% 100%;
     display: block;
@@ -279,8 +275,6 @@ a:hover{
 
 #coin {
     position: absolute;
-    width: 20%;
-    height: 95%;
     top: 0;
     right: 68%;
     background-image: url("../../assets/game/gif/coin.gif");
@@ -289,26 +283,23 @@ a:hover{
 
 #skillbg {
     position: absolute;
-    width: 11%;
-    height: 9%;
-    top: 8%;
-    right: 7px;
+    width: 200px;
+    height: 50px;
+    top: 5px;
+    right: 0;
     background-image: url("../../assets/game/png/skill.png");
     background-size: 100% 100%;
     display: block;
 }
 
 #skillnum {
-    position: absolute;
-    top: 20%;
-    left: 12%;
     text-align: center;
+    line-height: 45px;
     color: rgb(188, 3, 255);
 }
 
 #ground {
     position: absolute;
-
     width: 100%;
     height: 5%;
     bottom: -3%;
