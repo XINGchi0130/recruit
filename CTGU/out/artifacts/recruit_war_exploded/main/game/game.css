@@ -214,7 +214,7 @@ a:hover{
 
 /* blcok */
 .move1Class {
-    animation: move1 1s linear;
+    animation: move1 0.9s linear;
 }
 
 .move1fast1Class {
@@ -231,7 +231,7 @@ a:hover{
 
 /* air */
 .move2Class {
-    animation: move2 1s linear;
+    animation: move2 0.9s linear;
 }
 
 .move2fast1Class {

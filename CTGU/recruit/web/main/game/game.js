@@ -102,6 +102,7 @@ window.addEventListener('keydown', event => {//element.addEventListener(event, f
 var skill = 0;//可用技能次数
 var invincibility = false;
 var available = true;
+//var k1 = 1;
 
 setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地调用函数function(),如果后面没有加millseconds,就会不断地调用function()
     //如果setInterval(function(),millseconds);中function不带括号则function过一定时间就执行一次,加括号则到了时间只执行一次
@@ -123,14 +124,18 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
     const blueblockLeft = parseFloat(
         getComputedStyle(blueblock).getPropertyValue('left')
     );
-    if ((blockLeft < 280 && blockLeft > 200 && dinoBottom <= 200) || (airblockLeft < 280 && airblockLeft > 200 && !(dinoheight < 200 || dinoBottom >= 200))) {//判断dino是否遇到两种block
-        if (invincibility == false) {//不是无敌状态下
+    if ((blockLeft < 280 && blockLeft > 210 && dinoBottom <= 200) || (airblockLeft < 280 && airblockLeft > 200 && !(dinoheight < 200 || dinoBottom >= 200))) {//判断dino是否遇到两种block
+        if (invincibility === false) {//不是无敌状态下
+            over.play();
             console.log('游戏结束');//控制台输出游戏结束
-            window.location.reload(); //游戏结束刷新页面
-            alert('游戏结束,  点击确定后按空格重新开始');//结束后出现提示框
+
             setTimeout(() => {
-                over.play();
-            },50)
+                if(start === true){
+                    window.location.reload(); //游戏结束刷新页面
+                    alert("游戏结束,点击确定或者按空格刷新页面.");
+                    start = false;
+                }
+            },45);
         }
     }
     if (yellowblockLeft < 208 && yellowblockLeft > 200 && dinoBottom > 208) {
@@ -208,7 +213,7 @@ function addblock() {
             setTimeout(() => {
                 block.classList.remove('move1Class');
                 document.getElementById("block").style.display = "none";
-            }, 1000);
+            }, 900);
         } else if (sorce <= 80) {//进入第二阶段
             block.classList.remove('move1Class');
             block.classList.add('move1fast1Class');
@@ -245,7 +250,7 @@ function addairblock() {
             setTimeout(() => {
                 airblock.classList.remove('move2Class');
                 document.getElementById("airblock").style.display = "none";
-            }, 1000);
+            }, 900);
         } else if (sorce <= 80) {//进入第二阶段
             airblock.classList.remove('move2Class');
             airblock.classList.add('move2fast1Class');
