@@ -65,7 +65,7 @@ a:hover{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/game/gif/mountainBackground.gif");
+    background-image: url("../../assets/game/gif/MountainBackground.gif");
     background-size: 100% 100%;
 }
 
@@ -129,7 +129,7 @@ a:hover{
 #block {
     width: 10%;
     height: 55%;
-    background-image: url("../../assets/game/gif/chen.gif");
+    background-image: url("../../assets/game/gif/Chen.gif");
     background-size: 100% 100%;
     position: absolute;
     bottom: 0;

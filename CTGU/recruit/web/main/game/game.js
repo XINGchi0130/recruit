@@ -69,7 +69,7 @@ window.addEventListener('keydown', event => {//element.addEventListener(event, f
         } else if (skill > 0) {
             jg.play();
             invincibility = true;
-            document.getElementById("dino").style.backgroundImage = "url('../../assets/game/gif/rotating.gif')";
+            document.getElementById("dino").style.backgroundImage = "url('../../assets/game/gif/Rotating.gif')";
             count = false;
             skill -= 1;
             document.getElementById("skillnum").innerHTML = "可用技能点数:" + skill;
