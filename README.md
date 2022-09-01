@@ -28,5 +28,4 @@ CTGU启明星&ACM集训队2022年秋季招新网站（最后没用，还是用�
 ![QQ截图20220901183930](https://user-images.githubusercontent.com/97927256/187895162-ac6c7ab3-98e4-4d05-bb57-6c1f788c9b5e.png)
 
 3.在recruit\src\main\Servlet\QQEmail.java中填写相关信息
-![QQ截图20220901184723](https://user-images.githubusercontent.com/97927256/187896529-a62d3761-97dd-4a7c-8c89-a34226e846a5.png)
-
+![QQ截图20220901191816](https://user-images.githubusercontent.com/97927256/187901791-3ad35e6b-61af-4ac0-95e7-e5b41c210eb8.png)
