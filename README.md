@@ -15,7 +15,7 @@ CTGU启明星&ACM集训队2022年秋季招新网站（最后没用，还是用�
 
 三、游戏页面:
 
-1.游戏:![QQ截图20220901182755](https://user-images.githubusercontent.com/97927256/187892992-ad036306-3cf9-4c91-8bf8-1d64b336bee4.png)
+1.游戏（点主页面小风车来这）:![QQ截图20220901182755](https://user-images.githubusercontent.com/97927256/187892992-ad036306-3cf9-4c91-8bf8-1d64b336bee4.png)
 2.游戏玩法:![image](CTGU/recruit/web/assets/game/png/Instractions.png)
 
 
