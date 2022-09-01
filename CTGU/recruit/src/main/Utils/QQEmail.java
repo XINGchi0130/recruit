@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class QQEmail {
     private Student student;
-    private final String smtp = "";//QQ邮箱中的sntp授权码
+    private final String smtp = "";//QQ邮箱中的smtp授权码
     private final String QQ = "";//向别人发送QQ邮箱的QQ号
     private final String MyQQ = "";//自己的QQ（QQ邮箱发送的内容，方便联系管理员）
 
