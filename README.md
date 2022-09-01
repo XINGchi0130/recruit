@@ -6,7 +6,9 @@ CTGU启明星&ACM集训队2022年秋季招新网站
 
 
 二、表单页面:
-![QQ截图20220901182720](https://user-images.githubusercontent.com/97927256/187892892-dc50785c-ece0-49d8-aa5c-4a8d0ba8ea2c.png)
+1.![QQ截图20220901182720](https://user-images.githubusercontent.com/97927256/187892892-dc50785c-ece0-49d8-aa5c-4a8d0ba8ea2c.png)
+2.收到的邮箱:
+![QQ截图20220901185648](https://user-images.githubusercontent.com/97927256/187898266-6118ec08-dd0e-4cd5-9275-f474bd6498e8.png)
 
 
 三、游戏页面:
