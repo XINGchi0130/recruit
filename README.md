@@ -6,9 +6,9 @@ CTGU启明星&ACM集训队2022年秋季招新网站（最后没用，还是用�
 ![QQ截图20220901182636](https://user-images.githubusercontent.com/97927256/187892775-bae7ea5d-9d0f-47be-879d-e5b5b8452cf4.png)
 
 
-二、表单页面:
+二、表单:
 
-1.![QQ截图20220901182720](https://user-images.githubusercontent.com/97927256/187892892-dc50785c-ece0-49d8-aa5c-4a8d0ba8ea2c.png)
+1.页面:![QQ截图20220901182720](https://user-images.githubusercontent.com/97927256/187892892-dc50785c-ece0-49d8-aa5c-4a8d0ba8ea2c.png)
 2.收到的邮箱:
 ![Snipaste_2022-09-01_19-01-23](https://user-images.githubusercontent.com/97927256/187899005-5d09ded0-d5b0-4eab-a002-3537309417ba.png)
 
