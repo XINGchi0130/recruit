@@ -1,13 +1,16 @@
-CTGU启明星&ACM集训队2022年秋季招新网站
+CTGU启明星&ACM集训队2022年秋季招新网站（最后没用，还是用了飞书招新，【doge】就当打了个怪）
 
 
 一、主页面:
+
 ![QQ截图20220901182636](https://user-images.githubusercontent.com/97927256/187892775-bae7ea5d-9d0f-47be-879d-e5b5b8452cf4.png)
 
 
 二、表单页面:
+
 1.![QQ截图20220901182720](https://user-images.githubusercontent.com/97927256/187892892-dc50785c-ece0-49d8-aa5c-4a8d0ba8ea2c.png)
-2.收到的邮箱:![QQ截图20220901185648](https://user-images.githubusercontent.com/97927256/187898266-6118ec08-dd0e-4cd5-9275-f474bd6498e8.png)
+2.收到的邮箱:
+![Snipaste_2022-09-01_19-01-23](https://user-images.githubusercontent.com/97927256/187899005-5d09ded0-d5b0-4eab-a002-3537309417ba.png)
 
 
 三、游戏页面:
