@@ -11,9 +11,9 @@ import java.util.Properties;
 
 public class QQEmail {
     private Student student;
-    private final String stmp = "";
-    private final String QQ = "";
-    private final String MyQQ = "";
+    private final String smtp = "";//QQ邮箱中的sntp授权码
+    private final String QQ = "";//向别人发送QQ邮箱的QQ号
+    private final String MyQQ = "";//自己的QQ（QQ邮箱发送的内容，方便联系管理员）
 
     public QQEmail(Student student) {
         this.student = student;
@@ -39,7 +39,7 @@ public class QQEmail {
         Session session = Session.getDefaultInstance(prop, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication( QQ + "@qq.com", stmp);
+                return new PasswordAuthentication( QQ + "@qq.com", smtp);
             }
         });
         //开启session的debug模式，这样可以查看到程序发送Email的运行状态
@@ -47,7 +47,7 @@ public class QQEmail {
         //2.通过session得到transport对象
         Transport ts = session.getTransport();
         //3.使用邮箱的用户名和授权码连上邮件服务器
-        ts.connect("smtp.qq.com", QQ + "@qq.com", stmp);
+        ts.connect("smtp.qq.com", QQ + "@qq.com", smtp);
         //4.创建邮件：写文件
         //注意需要传递session
         MimeMessage message = new MimeMessage(session);
