@@ -7,8 +7,7 @@ CTGU启明星&ACM集训队2022年秋季招新网站
 
 二、表单页面:
 1.![QQ截图20220901182720](https://user-images.githubusercontent.com/97927256/187892892-dc50785c-ece0-49d8-aa5c-4a8d0ba8ea2c.png)
-2.收到的邮箱:
-![QQ截图20220901185648](https://user-images.githubusercontent.com/97927256/187898266-6118ec08-dd0e-4cd5-9275-f474bd6498e8.png)
+2.收到的邮箱:![QQ截图20220901185648](https://user-images.githubusercontent.com/97927256/187898266-6118ec08-dd0e-4cd5-9275-f474bd6498e8.png)
 
 
 三、游戏页面:
@@ -17,7 +16,7 @@ CTGU启明星&ACM集训队2022年秋季招新网站
 2.游戏玩法:![image](CTGU/recruit/web/assets/game/png/Instractions.png)
 
 
-使用说明:
+四、使用说明:
 
 1.在recruit\src\main\Servlet\Servlet.java中填写数据库信息，以上传报名学生信息
 ![QQ截图20220901183259](https://user-images.githubusercontent.com/97927256/187894014-70f4b417-f368-4916-a0a6-e2793f2e7dd0.png)
