@@ -248,12 +248,12 @@ a:hover{
 
 /* yellow */
 .yellowmoveClass {
-    animation: yellowmove 0.9s linear;
+    animation: yellowmove 0.8s linear;
 }
 
 /* blue */
 .bluemoveClass {
-    animation: bluemove 0.9s linear;
+    animation: bluemove 0.8s linear;
 }
 
 #sorce {

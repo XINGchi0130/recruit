@@ -128,11 +128,10 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
     );
     //280 210 200 \280 200\200 200
     // (w - 0.16 * h)*0.2
-    if ((blockLeft < (w - 0.16 * h)*0.21 && blockLeft > (w - 0.16 * h)*0.20 && dinoBottom <= h*0.45*0.7 ) || (airblockLeft < (w - 0.16 * h)*0.21 && airblockLeft > (w - 0.16 * h)*0.20 && !(dinoheight < h*0.7*0.5*0.8 || dinoBottom >= h*0.45*0.7))) {//判断dino是否遇到两种block
+    if ( ((blockLeft < (w - 0.16 * h)*0.21) && (blockLeft > (w - 0.16 * h)*0.19) && (dinoBottom <= h*0.45*0.7 )) || ( (airblockLeft < (w - 0.16 * h)*0.21) && (airblockLeft > (w - 0.16 * h)*0.19) && !(dinoheight < h*0.7*0.5*0.8 || dinoBottom >= h*0.45*0.7))) {//判断dino是否遇到两种block
         if (invincibility === false) {//不是无敌状态下
             over.play();
             console.log('游戏结束');//控制台输出游戏结束
-
             setTimeout(() => {
                 if(start === true){
                     window.location.reload(); //游戏结束刷新页面
@@ -142,7 +141,7 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
             },45);
         }
     }
-    if (yellowblockLeft < (w - 0.16 * h)*0.215 && yellowblockLeft > (w - 0.16 * h)*0.20 && dinoBottom > h*0.45*0.7) {
+    if (yellowblockLeft < (w - 0.16 * h)*0.23 && yellowblockLeft > (w - 0.16 * h)*0.19 && dinoBottom > h*0.45*0.7 && available == true) {
         available = false;
         ybmusic.play();
         if (sorce <= 50) {
@@ -156,7 +155,7 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
             available = true;
         }, 250)
     }
-    if (blueblockLeft < (w - 0.16 * h)*0.215 && blueblockLeft > (w - 0.16 * h)*0.20 && dinoBottom > h*0.45*0.7 && available == true) {
+    if (blueblockLeft < (w - 0.16 * h)*0.23 && blueblockLeft > (w - 0.16 * h)*0.20 && dinoBottom > h*0.45*0.7 && available == true) {
         available = false;
         ybmusic.play();
         skill += 1;
@@ -290,7 +289,7 @@ function addyellowblock() {
     setTimeout(() => {
         yellowblock.classList.remove('yellowmoveClass');
         document.getElementById("yellowblock").style.display = "none";
-    }, 900);
+    }, 800);
 }
 
 //blue
@@ -301,7 +300,7 @@ function addblueblock() {
     setTimeout(() => {
         blueblock.classList.remove('bluemoveClass');
         document.getElementById("blueblock").style.display = "none";
-    }, 900);
+    }, 800);
 }
 
 //决定怪的刷新频率
