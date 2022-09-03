@@ -106,6 +106,8 @@ var available = true;
 
 setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地调用函数function(),如果后面没有加millseconds,就会不断地调用function()
     //如果setInterval(function(),millseconds);中function不带括号则function过一定时间就执行一次,加括号则到了时间只执行一次
+    let w = document.documentElement.clientWidth;
+    let h = document.documentElement.clientHeight;
     const dinoBottom = parseFloat(//parse有解析的意思,那么parseFloat()表示函数可解析一个字符串，并返回一个浮点数。
         getComputedStyle(dino).getPropertyValue('bottom')
     );
@@ -124,7 +126,9 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
     const blueblockLeft = parseFloat(
         getComputedStyle(blueblock).getPropertyValue('left')
     );
-    if ((blockLeft < 280 && blockLeft > 210 && dinoBottom <= 200) || (airblockLeft < 280 && airblockLeft > 200 && !(dinoheight < 200 || dinoBottom >= 200))) {//判断dino是否遇到两种block
+    //280 210 200 \280 200\200 200
+    // (w - 0.16 * h)*0.2
+    if ((blockLeft < (w - 0.16 * h)*0.21 && blockLeft > (w - 0.16 * h)*0.20 && dinoBottom <= h*0.45*0.7 ) || (airblockLeft < (w - 0.16 * h)*0.21 && airblockLeft > (w - 0.16 * h)*0.20 && !(dinoheight < h*0.7*0.5*0.8 || dinoBottom >= h*0.45*0.7))) {//判断dino是否遇到两种block
         if (invincibility === false) {//不是无敌状态下
             over.play();
             console.log('游戏结束');//控制台输出游戏结束
@@ -138,7 +142,7 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
             },45);
         }
     }
-    if (yellowblockLeft < 208 && yellowblockLeft > 200 && dinoBottom > 208) {
+    if (yellowblockLeft < (w - 0.16 * h)*0.215 && yellowblockLeft > (w - 0.16 * h)*0.20 && dinoBottom > h*0.45*0.7) {
         available = false;
         ybmusic.play();
         if (sorce <= 50) {
@@ -152,7 +156,7 @@ setInterval(() => {//setInterval(function(), milliseconds); 方法会不停地�
             available = true;
         }, 250)
     }
-    if (blueblockLeft < 208 && blueblockLeft > 200 && dinoBottom > 200 && available == true) {
+    if (blueblockLeft < (w - 0.16 * h)*0.215 && blueblockLeft > (w - 0.16 * h)*0.20 && dinoBottom > h*0.45*0.7 && available == true) {
         available = false;
         ybmusic.play();
         skill += 1;
