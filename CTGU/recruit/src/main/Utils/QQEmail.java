@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class QQEmail extends Thread{
     private Student student;
-    private final String smtp = "smtp授权码";//QQ邮箱中的smtp授权码
+    private final String smtp = "发送者的smtp授权码";//QQ邮箱中的smtp授权码
     private final String QQ = "发送者的QQ号";//向别人发送QQ邮箱的QQ号
     private final String MyQQ = "自己的QQ";//自己的QQ（QQ邮箱发送的内容，方便联系管理员）
 
