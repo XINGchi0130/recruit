@@ -43,11 +43,11 @@ public class Servlet extends HttpServlet {
                 QQNumber,
                 Introduction);
 
-        SQL SqlConnect = new SQL("",
-                "",
-                "",
-                "",
-                "");
+        SQL SqlConnect = new SQL("数据库的用户名",
+                "密码",
+                "地址",
+                "数据库名",
+                "端口");
 
         if (checkIn(student, SqlConnect)) {
             String sqlUpdate =  "update students set" + " name = " + "'" + student.getName() + "'" + "," + " sex = " + "'" + student.getSex() + "'" + "," + " intention_first = " + "'" + student.getIntentionFirst() + "'" + "," + " intention_second = " + "'" + student.getIntentionSecond() + "'" + "," + " college = " + "'" + student.getCollege() + "'" + "," + " major = " + "'" + student.getMajor() + "'" + "," + " phone_number = " + "'" + student.getPhoneNumber() + "'" + "," + " qq_number = " + "'" + student.getQQNumber() + "'" + "," + " introduction = " + "'" + student.getIntroduction() + "'" + " where id = " + "'" + student.getID() + "'";
@@ -83,11 +83,9 @@ public class Servlet extends HttpServlet {
     public static void sendMessage(Student student){
         QQEmail qqEmail = new QQEmail(student);
         try {
-            qqEmail.sendMessage();
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        } catch (MessagingException e) {
-            e.printStackTrace();
+            qqEmail.start();
+        }catch (Exception e){
+            System.out.println(e);
         }
     }
 }
